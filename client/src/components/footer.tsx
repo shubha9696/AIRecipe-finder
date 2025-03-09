@@ -19,7 +19,7 @@ export function Footer() {
             href="https://www.linkedin.com/in/shubham-chakrawarti"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center space-x-2 text-muted-foreground transition-all duration-300 hover:text-primary"
+            className="group flex items-center space-x-2 text-muted-foreground transition-all duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             <SiLinkedin className="h-6 w-6 transform transition-transform duration-300 group-hover:scale-110" />
             <span className="text-sm font-medium opacity-90 transition-opacity duration-300 group-hover:opacity-100">
@@ -28,7 +28,7 @@ export function Footer() {
           </a>
           <a
             href="mailto:shubham2004.hc@gmail.com"
-            className="group flex items-center space-x-2 text-muted-foreground transition-all duration-300 hover:text-primary"
+            className="group flex items-center space-x-2 text-muted-foreground transition-all duration-300 hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             <SiGmail className="h-6 w-6 transform transition-transform duration-300 group-hover:scale-110" />
             <span className="text-sm font-medium opacity-90 transition-opacity duration-300 group-hover:opacity-100">

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background/95" />
+      <div className="absolute inset-0 bg-grid-slate-100/[0.05] [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
       <div className="container relative flex h-16 items-center">
         <div className="mr-4 flex flex-1">
           <Link href="/" className="mr-6 flex items-center space-x-2 group">
@@ -65,7 +65,7 @@ export function Nav() {
             <Link href="/auth">
               <Button 
                 size="sm" 
-                className="font-medium bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
+                className="font-medium bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 shadow-lg shadow-primary/20"
               >
                 Sign Up
               </Button>
