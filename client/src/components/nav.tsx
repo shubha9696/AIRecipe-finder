@@ -15,14 +15,14 @@ export function Nav() {
               whileHover={{ rotate: 20 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <ChefHat className="h-6 w-6 text-primary transform transition-transform group-hover:scale-110" />
+              <ChefHat className="h-6 w-6 text-primary transform transition-transform duration-300 group-hover:scale-110" />
             </motion.div>
             <span className="hidden font-bold sm:inline-block text-lg bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               AI Recipe Finder
             </span>
           </Link>
           <nav className="flex items-center space-x-8 text-sm font-medium">
-            <Link href="/about" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group">
+            <Link href="/about" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
               <motion.div
                 whileHover={{ rotate: 15 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -31,7 +31,7 @@ export function Nav() {
               </motion.div>
               <span className="opacity-90 group-hover:opacity-100">About</span>
             </Link>
-            <Link href="/popular-recipes" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group">
+            <Link href="/popular-recipes" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
               <motion.div
                 whileHover={{ rotate: -15 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -40,7 +40,7 @@ export function Nav() {
               </motion.div>
               <span className="opacity-90 group-hover:opacity-100">Popular Recipes</span>
             </Link>
-            <Link href="/recipes" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group">
+            <Link href="/recipes" className="flex items-center space-x-2 hover:text-primary transition-all duration-300 group relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full">
               <motion.div
                 whileHover={{ rotate: 15 }}
                 transition={{ type: "spring", stiffness: 300 }}
