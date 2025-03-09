@@ -9,6 +9,7 @@ import About from "@/pages/about";
 import Auth from "@/pages/auth";
 import Profile from "@/pages/profile";
 import Recipes from "@/pages/recipes";
+import PopularRecipes from "@/pages/popular-recipes";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/auth" component={Auth} />
       <Route path="/profile" component={Profile} />
       <Route path="/recipes" component={Recipes} />
+      <Route path="/popular-recipes" component={PopularRecipes} />
       <Route component={NotFound} />
     </Switch>
   );

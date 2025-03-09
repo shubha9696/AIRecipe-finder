@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SiOpenai } from "react-icons/si";
-import { ChefHat, UtensilsCrossed } from "lucide-react";
+import { ChefHat, UtensilsCrossed, BookOpen } from "lucide-react";
 
 export function Nav() {
   return (
@@ -18,6 +18,10 @@ export function Nav() {
             <Link href="/about" className="flex items-center space-x-2 hover:text-primary transition-colors">
               <UtensilsCrossed className="h-4 w-4" />
               <span>About</span>
+            </Link>
+            <Link href="/popular-recipes" className="flex items-center space-x-2 hover:text-primary transition-colors">
+              <BookOpen className="h-4 w-4" />
+              <span>Popular Recipes</span>
             </Link>
             <Link href="/recipes" className="flex items-center space-x-2 hover:text-primary transition-colors">
               <SiOpenai className="h-4 w-4" />
