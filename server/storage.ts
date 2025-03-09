@@ -3,7 +3,9 @@ import { users, recipes, type User, type Recipe, type InsertUser, type InsertRec
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
+  getUserByEmail(email: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  verifyUserEmail(userId: number): Promise<void>;
   getRecipes(userId: number): Promise<Recipe[]>;
   createRecipe(userId: number, recipe: InsertRecipe): Promise<Recipe>;
   toggleFavorite(userId: number, recipeId: number): Promise<void>;
@@ -32,11 +34,25 @@ export class MemStorage implements IStorage {
     );
   }
 
+  async getUserByEmail(email: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => user.email === email,
+    );
+  }
+
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.userId++;
-    const user: User = { ...insertUser, id };
+    const user: User = { ...insertUser, id, emailVerified: false };
     this.users.set(id, user);
     return user;
+  }
+
+  async verifyUserEmail(userId: number): Promise<void> {
+    const user = this.users.get(userId);
+    if (user) {
+      user.emailVerified = true;
+      this.users.set(userId, user);
+    }
   }
 
   async getRecipes(userId: number): Promise<Recipe[]> {

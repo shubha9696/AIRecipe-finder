@@ -4,8 +4,11 @@ import { z } from "zod";
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
+  emailVerified: boolean("email_verified").notNull().default(false),
 });
 
 export const recipes = pgTable("recipes", {
@@ -19,8 +22,14 @@ export const recipes = pgTable("recipes", {
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
+  name: true,
+  email: true,
   username: true,
   password: true,
+}).extend({
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  email: z.string().email("Invalid email address"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
 });
 
 export const insertRecipeSchema = createInsertSchema(recipes).pick({
