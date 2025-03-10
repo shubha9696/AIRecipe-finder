@@ -4,7 +4,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   baseURL: "https://openrouter.ai/api/v1",
   defaultHeaders: {
-    "HTTP-Referer": "https://replit.com",
+    "HTTP-Referer": "https://airecipefinder.vercel.app",
     "X-Title": "AI Recipe Finder"
   }
 });
@@ -17,7 +17,7 @@ export async function generateRecipe(ingredients: string[]): Promise<{
 }> {
   try {
     const response = await openai.chat.completions.create({
-      model: "deepseek/deepseek-ai-r1:free",
+      model: "google/gemini-2.0-pro-exp-02-05:free",
       messages: [
         {
           role: "system",
